@@ -1,0 +1,543 @@
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #172033;
+  background: #f7f9fd;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid rgba(40, 55, 85, 0.08);
+  background: rgba(247, 249, 253, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.brand,
+.site-header nav,
+.header-actions,
+.eyebrow,
+.hero-actions,
+.metric,
+.dashboard-shell aside a,
+.icon-text-button,
+.price-card li {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.brand-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(135deg, #0ea5e9, #7c3aed);
+}
+
+.site-header nav {
+  gap: 24px;
+  color: #5a6680;
+  font-weight: 650;
+}
+
+.header-actions {
+  gap: 10px;
+}
+
+.primary-button,
+.secondary-button,
+.ghost-button,
+.icon-text-button {
+  min-height: 42px;
+  border-radius: 8px;
+  font-weight: 750;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
+  color: white;
+  background: #1463ff;
+  box-shadow: 0 12px 28px rgba(20, 99, 255, 0.22);
+}
+
+.secondary-button {
+  padding: 0 18px;
+  color: #172033;
+  background: white;
+  border: 1px solid #d8e1ef;
+}
+
+.ghost-button {
+  padding: 0 12px;
+  color: #51617d;
+  background: transparent;
+}
+
+.large {
+  min-height: 50px;
+  padding: 0 22px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: clamp(28px, 5vw, 80px);
+  min-height: 680px;
+  padding: 70px clamp(20px, 5vw, 72px) 54px;
+  overflow: hidden;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 650px;
+}
+
+.eyebrow {
+  gap: 8px;
+  width: fit-content;
+  color: #1463ff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  margin-top: 18px;
+  color: #111827;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.hero-copy p {
+  margin-top: 24px;
+  color: #4f5f7a;
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+.hero-actions {
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.hero-visual {
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-height: 560px;
+  padding: 30px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 189, 46, 0.28), transparent 28%),
+    linear-gradient(145deg, #0f172a 0%, #1843a2 52%, #08a5c8 100%);
+  box-shadow: 0 34px 90px rgba(22, 42, 84, 0.25);
+}
+
+.signal-grid {
+  position: absolute;
+  inset: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.signal-grid span {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.live-card,
+.media-list {
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+}
+
+.main-live-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 430px);
+  margin-bottom: 18px;
+  padding: 22px;
+  border-radius: 18px;
+}
+
+.main-live-card p,
+.media-list span,
+.media-list small {
+  color: #66728b;
+  font-weight: 700;
+}
+
+.main-live-card strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 42px;
+}
+
+.media-list {
+  display: grid;
+  gap: 12px;
+  max-width: 560px;
+  padding: 14px;
+  border-radius: 20px;
+}
+
+.media-list article {
+  padding: 18px;
+  border-radius: 14px;
+  background: white;
+}
+
+.media-list strong {
+  display: block;
+  margin: 8px 0;
+  line-height: 1.35;
+}
+
+.section {
+  padding: 70px clamp(20px, 5vw, 72px);
+}
+
+.section-heading {
+  max-width: 740px;
+  margin-bottom: 28px;
+}
+
+.section-heading h2,
+.contact-band h2 {
+  margin-top: 10px;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.08;
+}
+
+.dashboard-shell {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid #dae4f1;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 24px 70px rgba(40, 55, 85, 0.1);
+}
+
+.dashboard-shell aside {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border-right: 1px solid #e5edf6;
+  background: #fbfcff;
+}
+
+.dashboard-shell aside a {
+  gap: 10px;
+  min-height: 42px;
+  padding: 0 12px;
+  border-radius: 8px;
+  color: #5b6a86;
+  font-weight: 750;
+}
+
+.dashboard-shell aside .active {
+  color: #0f4fd7;
+  background: #eaf1ff;
+}
+
+.dashboard-content {
+  padding: 24px;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.metric {
+  gap: 14px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #f3f7ff;
+}
+
+.metric span {
+  color: #61708a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.metric strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 32px;
+}
+
+.monitor-grid,
+.feature-grid,
+.pricing-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.monitor-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.monitor-card,
+.feature-card,
+.price-card {
+  border: 1px solid #dde6f3;
+  border-radius: 8px;
+  background: white;
+}
+
+.monitor-card {
+  display: flex;
+  min-height: 230px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.monitor-card span {
+  color: #0f8f68;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.monitor-card h3,
+.feature-card h3,
+.price-card h3 {
+  margin-top: 8px;
+  font-size: 22px;
+}
+
+.monitor-card p,
+.feature-card p,
+.price-card p {
+  color: #62718d;
+  line-height: 1.55;
+}
+
+.icon-text-button {
+  gap: 8px;
+  width: fit-content;
+  color: #1463ff;
+  background: transparent;
+}
+
+.feature-grid,
+.pricing-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.feature-card,
+.price-card {
+  padding: 22px;
+}
+
+.feature-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 12px;
+  color: #1463ff;
+  background: #eaf1ff;
+}
+
+.feature-card p,
+.price-card p {
+  margin-top: 12px;
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.price-card {
+  display: flex;
+  min-height: 340px;
+  flex-direction: column;
+}
+
+.price-card strong {
+  display: block;
+  margin-top: 16px;
+  font-size: 34px;
+}
+
+.price-card ul {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.price-card li {
+  gap: 8px;
+  color: #44526c;
+  font-weight: 700;
+}
+
+.price-card button {
+  margin-top: auto;
+}
+
+.contact-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 30px clamp(20px, 5vw, 72px) 70px;
+  padding: clamp(24px, 5vw, 48px);
+  border-radius: 24px;
+  color: white;
+  background: linear-gradient(135deg, #172033, #1463ff 58%, #14b8a6);
+}
+
+.contact-band .eyebrow {
+  color: #cffafe;
+}
+
+.contact-band h2 {
+  max-width: 860px;
+}
+
+@media (max-width: 980px) {
+  .site-header nav,
+  .ghost-button {
+    display: none;
+  }
+
+  .hero,
+  .dashboard-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-visual {
+    min-height: 500px;
+  }
+
+  .dashboard-shell aside {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid #e5edf6;
+  }
+
+  .metric-row,
+  .monitor-grid,
+  .feature-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-band {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    padding: 14px 16px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .hero,
+  .section {
+    padding: 38px 16px;
+  }
+
+  .hero-copy p {
+    font-size: 17px;
+  }
+
+  .hero-visual {
+    min-height: 430px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .main-live-card strong {
+    font-size: 32px;
+  }
+
+  .dashboard-content {
+    padding: 16px;
+  }
+
+  .contact-band {
+    margin: 16px 16px 42px;
+  }
+}
